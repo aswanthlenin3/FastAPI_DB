@@ -44,7 +44,18 @@ async def update_data(request : Request):
             return "Data Updated Successfully"
     return 'Unsuccessful Update' 
 
-
+@app.delete('/delete_data')
+async def delete_data(request : Request):
+    payload =  await request.json()
+    with open('sample_db.json' , 'r') as f:
+        _data = json.load(f)
+    for res in _data:
+        if res['_id'] == payload['_id']:
+            del res['_id']
+            with open('sample_db.json' , 'w') as f:
+                json.dump(_data , f , indent = 2)
+            return "Data DELETED Successfully"
+    return 'Unsuccessful DELETED'
 
 if __name__ == '__main__':
     app.run(host = 'localhost',
