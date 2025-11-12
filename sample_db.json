@@ -1,0 +1,38 @@
+[
+  {
+    "_id": 1,
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "age": 25,
+    "city": "Los Angeles"
+  },
+  {
+    "_id": 3,
+    "name": "Charlie",
+    "age": 35,
+    "city": "Chicago"
+  },
+  {
+    "_id": 4,
+    "name": "Diana",
+    "age": 28,
+    "city": "Miami"
+  },
+  {
+    "_id": 5,
+    "name": "Ethan",
+    "age": 32,
+    "city": "Seattle"
+  },
+  {
+    "_id": 6,
+    "name": "Charlie_chocolate",
+    "age": 45,
+    "city": "califonia"
+  }
+]
