@@ -29,18 +29,20 @@ async def insert_data(request: Request):
         with open('sample_db.json' , 'w') as f:
             json.dump(_data , f , indent = 2)
         return 'Data Has been Updated'
-@app.post('/update-data')
+@app.post('/update-data/')
 async def update_data(request : Request):
     payload = await request.json()
-    with open('sample.json()' , 'r') as f:
+    with open('sample_db.json' , 'r') as f:
         _data = json.load(f)
-        for res in _data:
-            if res['_id'] == payload['_id']:
-                res['name'] = payload['name']
-                res['age'] = payload['age']
-                res['city'] = payload['city']
-                return "Data Updated Successfully"
-        return 'Unsuccessful Update' 
+    for res in _data:
+        if res['_id'] == payload['_id']:
+            res['name'] = payload['name']
+            res['age'] = payload['age']
+            res['city'] = payload['city']
+            with open('sample_db.json' , 'w') as f:
+                json.dump(_data , f , indent = 2)
+            return "Data Updated Successfully"
+    return 'Unsuccessful Update' 
 
 
 
